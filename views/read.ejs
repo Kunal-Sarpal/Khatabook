@@ -1,12 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dynamic Animated Heading</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 2s ease-out forwards;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                           
+            }
+            50% {
+                text-shadow: 0 10px 20px rgb(152, 3, 3),
+                            
+            }
+        }
+        .animate-glow {
+            animation: glow 3s infinite alternate;
+        }
+    </style>
 </head>
-<body>
-    <h1><%= data %></h1>
+<body >
+    <h1 class="block text-black text-5xl border-b-4 border-gray-800 py-10 px-5" >Khata Information...</h1>
+<main class="bg-gray-600 flex items-center justify-center p-10">
+
+    <h1 class="text-6xl font-bold text-white animate-fade-in-up animate-glow block"><%= data %></h1>
+
+</main>
 </body>
 </html>
